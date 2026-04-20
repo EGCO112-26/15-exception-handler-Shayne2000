@@ -5,8 +5,9 @@ int main(){
 	double d;
 
 	try {
-		for (int i = 0 ; i < 100000000 ; i ++) {
-			new int;
+		for (int i = 0 ; i < 100 ; i ++) {
+			new int[1000000000000000];
+			std::cout<<"test"<<i<<std::endl;
 		}
 		std::cin>>x>>y;
 	
@@ -23,6 +24,9 @@ int main(){
 		std::cout<< "The result is " <<d<<std::endl;	
 	} catch(const char* c) {
 		std::cerr << c << std:: endl;
+	}
+	catch(...){
+		std::cout<<"mem??"<<std::endl;
 	}
 
 	
