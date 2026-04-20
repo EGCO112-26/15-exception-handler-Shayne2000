@@ -16,6 +16,8 @@ class myf2 : public std::exception {
 		}
 };
 
+
+
 int main(){
 	int x,y;
 	double d;
@@ -24,6 +26,10 @@ int main(){
 		pass = 1 ;
 		try {
 			std::cin>>x>>y;
+
+			// for (int i = 0 ; i < 100 ; i++) {
+			// 	new int[10000000000000000];
+			// }
 		
 			if(std::cin.fail()){
 				myf2 f2 ;
@@ -39,11 +45,14 @@ int main(){
 			d=(double) x/y;
 			std::cout<< "The result is " <<d<<std::endl;	
 		}
-
+		catch (std::bad_alloc&) {
+			std::cout << "Error allocating memory." << std::endl; 
+		}
 		catch(std::exception &e){
 			std::cout<<"std error : "<<e.what()<<std::endl;
-			pass = 0 ;
+			pass = 0 ;	
 		}
+		
 	}while (pass == 0);
 
 	
